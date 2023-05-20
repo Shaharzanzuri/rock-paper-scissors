@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paper scissors Game</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+
+    <section class="game-head">
+        <h1> Rock Paper Scissors</h1>
+        <div class="score">
+            <div class="player-score">
+                <h2>Player</h2>
+                <p id="player-text">0</p>
+            </div>
+            <div class="computer-score">
+                <h2>Computer</h2>
+                <p id="computer-text">0</p>
+            </div>
+        </div>
+        <div id="text">
+            <p></p>
+        </div>
+        </div>
+
+    </section>
+
+
+    <div class="game">
+        <div id="hands-pic">
+            <img class="user_hand" id="user-hand" src="picturs/rockEmoji.png" width="200" height="200"></img>
+            <img class="computer_hand" id="computer-hand" src="picturs/rockEmoji.png" width="200" height="200"></img>
+        </div>
+
+
+
+        <div class="buttons">
+
+
+            <div id="reset">
+                <button class="reset-score-button" onmouseover="handleResetButtonover()"
+                    onmouseout="handleResetButtonout()" onclick="score[1]=0;score[0]=0 ;
+                    updateScore(score);localStorage.removeItem('score',score);reset();">Reset Score!
+                </button>
+            </div>
+
+
+            <div id="hands-button">
+                <div class="paper">
+                    <p>paper</p>
+                    <button class="paper" onmouseover="handleMouseover(1)"
+                        onmouseout="handleMouseout(1); computermoveDisplay(3);" onclick="play(1) ;
+                    localStorage.setItem('score',JSON.stringify(score))" <p class="move_button">&#9995;&#127996;
+                        </p>
+                    </button>
+                </div>
+
+                <div class="scissors">
+                    <p>scissors</p>
+                    <button class="scissors" onmouseover="handleMouseover(2)"
+                        onmouseout="handleMouseout(2);computermoveDisplay(3)" onclick="play(2) ;
+                    localStorage.setItem('score',JSON.stringify(score));" <p class="move_button">&#9996;&#127996;
+                        </p>
+                    </button>
+                </div>
+
+                <div class="rock">
+                    <p>rock</p> <button class=" rock" onmouseover="handleMouseover(3)"
+                        onmouseout="handleMouseout(3);computermoveDisplay(3)" onclick="play(3) ;
+                    localStorage.setItem('score',JSON.stringify(score))" <p class="move_button">&#9994;&#127996;
+                        </p>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="results">
+            <h3>score:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>player</th>
+                        <th>computer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="output-table">
+                        <td>
+                            <p>0</p>
+                        </td>
+                        <td>
+                            <p>0</p>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+        <script src="myscript.js"></script>
+</body>
+
+
+</html>
